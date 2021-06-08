@@ -12,6 +12,11 @@ pipeline{
         }
       }
     }
+    stage('create tomcat docker image'){
+      steps{
+        sh "docker build . -t tomcatSAMPLEAKIF:${env.BUILD_ID}"
+      }
+    }
     
   }
 }
